@@ -1,2 +1,3 @@
-# SortingVisualiser
-Visualiser for array sorting through Bubble Sort algorithm using HTML, CSS, JavaScript. 
+# Algorithm Visualiser
+Visualiser for data structure based algorithms using React, JavaScript. 
+
