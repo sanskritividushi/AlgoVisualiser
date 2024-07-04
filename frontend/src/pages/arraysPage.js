@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '/Users/sukritipunj/Downloads/comp/AlgoVisualiser/frontend/src/index.css';
+import 'frontend/src/index.css';
 
 const arraysPage = () => {
   return (
