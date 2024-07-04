@@ -16,7 +16,7 @@ code {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background: whitesmoke;/*radial-gradient(56.94% 101.23% at 72.88% 59.27%, #374e7c 0%, #3a75b1 14.82%, #5d5baf 52.6%, #1c1c47 97.92%); */
+  background: radial-gradient(56.94% 101.23% at 72.88% 59.27%, #374e7c 0%, #3a75b1 14.82%, #5d5baf 52.6%, #1c1c47 97.92%);  
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: "Raleway", serif;
@@ -270,11 +270,11 @@ fill: rgb(137, 175, 231);
   display: flex;
   justify-content: center;
   align-items: center;
-  height:100vh;
+  height: 100vh;
 }
 
 .content-box {
-  background-color: whitesmoke; /* Solid white background */
+  background: whitesmoke; /* Solid white background */
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(20, 7, 117, 0.1);
   padding: 20px;

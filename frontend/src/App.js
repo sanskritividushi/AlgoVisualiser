@@ -1,5 +1,10 @@
 import './App.css';
 
+import React, { useEffect, useState } from "react";
+import LandingPage from './pages/LandingPage';
+
+
+
 function App() {
   const [unsortedArray, setUnsortedArray] = useState([]);
   const [speed] = useState(100);
