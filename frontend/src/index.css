@@ -26,10 +26,31 @@ code {
   
 }
 
-.header .name{
+.name{
+  margin: 30px;
+  height:100px;
+  margin-bottom:0;
+  display:flex;
+  font-size: 60px;
+  font-weight: bold;
+  color:#141444;
+}
+.header{
+  margin: 30px;
+  height:100px;
+  margin-bottom:0;
+  display:flex;
+  font-size: 50px;
+  font-weight: bold;
+  color:#141444;
+}
+.choose{
+  margin: 20px;
+  margin-top:0;
   display:flexbox;
   font-size: 30px;
   font-weight: bold;
+  color:#141444;
 }
 .container{
   max-height: 600px;
@@ -53,7 +74,7 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   z-index: 1;
   
 }
@@ -90,9 +111,6 @@ code {
 .bar { 
   height: 100px;
   background:#141444;
-  /* background: linear-gradient(to right, #4a745b 0%, #0e0d48); */
-  /* background-repeat: no-repeat; */
-  /* background-attachment: fixed; */
   display: flex;
   align-items: flex-end;
   width: 45px;
@@ -100,7 +118,10 @@ code {
   transition: height 0.6s ease-in-out, background-color 0.3s;
 }
 
-
+.algo-buttons{
+  height:80px;
+  width:1200px;
+}
 .buttons_container {
   display: flex;
   flex-direction: column;
@@ -110,16 +131,6 @@ code {
 }
 
 #randomize_arr_btn {
-  /* width: 400px;
-  color: #020c27;
-  text-shadow: 0.5px 0.5px rgb(9, 11, 120);
-  font-size: 25px;
-  font-weight: 500;
-  border-radius: 5px;
-  margin: 30px;
-  padding: 15px;
-  cursor: pointer; */
-
 align-items: center;
 background-color: #fff;
 border: 2px solid #000;
@@ -194,7 +205,7 @@ transition: all .3s;
 user-select: none;
 -webkit-user-select: none;
 touch-action: manipulation;
-margin: 5px;
+margin: 20px;
 width: 250px;
 }
 
@@ -284,5 +295,4 @@ fill: rgb(137, 175, 231);
   text-align: center;
   z-index: 1; /* Ensure the content box is above the background */
   position: relative; /* Required to respect z-index */
-
 }
