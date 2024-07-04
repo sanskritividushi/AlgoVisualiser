@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './index.css';
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   const [unsortedArray, setUnsortedArray] = useState([]);
@@ -59,37 +59,10 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <div className="header">
-        <span className="name"><b>AlgoVisualiser</b></span>
-      </div>
-      <div className="choose">
-        <h2> Choose Sorting Algorithm</h2>
-      </div>
-      <div className="buttons_container">
-        <button id="randomize_arr_btn" onClick={generateRandomArray}>GENERATE RANDOM ARRAY</button>
-        <div className="algo-buttons">
-          <button id="bubble_button" onClick={() => handleSort('bubble')}>BUBBLE SORT</button>
-          <button id="select_button">SELECTION SORT</button>
-          <button id="merge_button">MERGE SORT</button>
-          <button id="quick_button">QUICK SORT</button>
-        </div>
-        <div className="speed-buttons">
-          <div className="text">SLOWER</div>
-          <input 
-            type="range" 
-            id="speed-slider" 
-            min="1" 
-            max="1000" 
-            value={speed} 
-            onChange={(e) => setSpeed(400 - e.target.value)} 
-          />
-          <div className="text">FASTER</div>
-        </div>
-      </div>
-      <div className="bars_container" id="bars_container"></div>
+    <div className="App">
+      <h1>ALGO VISUALIZER</h1>
     </div>
   );
 }
-
+/*   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   GIT TOKEN */
 export default App;
