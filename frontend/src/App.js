@@ -1,30 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect, useState } from "react";
+import LandingPage from './pages/LandingPage';
 
 function App() {
   const [unsortedArray, setUnsortedArray] = useState([]);
-  const [speed, setSpeed] = useState(100);
+  const [speed] = useState(100);
 
   useEffect(() => {
+    const generateRandomArray = () => {
+      const array = Array.from({ length: 20 }, () => Math.floor(Math.random() * 30) + 1);
+      setUnsortedArray(array);
+      renderBars(array);
+    };
+
+    const renderBars = (array) => {
+      const barsContainer = document.getElementById('bars_container');
+      barsContainer.innerHTML = '';
+      array.forEach(value => {
+        const bar = document.createElement('div');
+        bar.classList.add('bar');
+        bar.style.height = `${value * 10}px`;
+        barsContainer.appendChild(bar);
+      });
+    };
+
     generateRandomArray();
   }, []);
-
-  const generateRandomArray = () => {
-    const array = Array.from({ length: 20 }, () => Math.floor(Math.random() * 30) + 1);
-    setUnsortedArray(array);
-    renderBars(array);
-  };
-
-  const renderBars = (array) => {
-    const barsContainer = document.getElementById('bars_container');
-    barsContainer.innerHTML = '';
-    array.forEach(value => {
-      const bar = document.createElement('div');
-      bar.classList.add('bar');
-      bar.style.height = `${value * 10}px`;
-      barsContainer.appendChild(bar);
-    });
-  };
 
   const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -60,9 +61,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>ALGO VISUALIZER</h1>
+      <LandingPage handleSort={handleSort} />
     </div>
   );
 }
-/*   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   GIT TOKEN */
+
 export default App;

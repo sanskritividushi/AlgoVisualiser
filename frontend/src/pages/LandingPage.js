@@ -1,14 +1,13 @@
 import React from "react";
-import '/Users/sukritipunj/Downloads/comp/AlgoVisualiser/frontend/src/index.css'
-import { Link } from "react-router-dom";
+// import '/index.css'
+// import { Link } from "react-router-dom";
 
-const LandingPage = () => {
+const LandingPage = ({ handleSort }) => {
     return (
       <div>
         <div className="background"></div>
         <div className="content-wrapper">
           <div className="content-box">
-          
           <div class="container">
         <div class="header"> 
             <span class="name"><b>ARRAYS</b></span>
@@ -17,7 +16,8 @@ const LandingPage = () => {
         <div class="buttons_container">
             <button id="randomize_arr_btn">GENERATE RANDOM ARRAY</button>
             <div class="algo-buttons">
-                <button id="bubble_button" >BUBBLE SORT</button>
+                  {/* <button id="bubble_button" onClick={() => handleSort('bubble')}>BUBBLE SORT</button> */}
+                <button id="bubble_button" onClick={() => handleSort('bubble')}>Bubble Sort</button>
                 <button id="select_button" >SELECTION SORT</button>
                 <button id="merge_button" >MERGE SORT</button>
                 <button id="quick_button" >QUICK SORT</button>
@@ -32,7 +32,6 @@ const LandingPage = () => {
         <div class="bars_container" id="bars_container">
         </div>
     </div>
-   /* link to another page */
           </div>
         </div>
       </div>
