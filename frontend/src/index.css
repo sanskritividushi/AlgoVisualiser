@@ -16,8 +16,8 @@ code {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background: radial-gradient(56.94% 101.23% at 72.88% 59.27%, #374e7c 0%, #3a75b1 14.82%, #5d5baf 52.6%, #1c1c47 97.92%);  
-  background-repeat: no-repeat;
+  
+  background-repeat: repeat;
   background-attachment: fixed;
   font-family: "Raleway", serif;
   font-optical-sizing: auto;
@@ -295,4 +295,67 @@ fill: rgb(137, 175, 231);
   text-align: center;
   z-index: 1; /* Ensure the content box is above the background */
   position: relative; /* Required to respect z-index */
+}
+
+/* FOR NAVBAR */
+
+/* index.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(56.94% 101.23% at 72.88% 59.27%, #374e7c 0%, #3a75b1 14.82%, #5d5baf 52.6%, #1c1c47 97.92%);  
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: whitesmoke;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+  margin: 0 50px;
+  text-decoration: none;
+  background:whitesmoke;
+  color: radial-gradient(56.94% 101.23% at 72.88% 59.27%, #374e7c 0%, #3a75b1 14.82%, #5d5baf 52.6%, #1c1c47 97.92%);  
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: radial-gradient(56.94% 101.23% at 72.88% 59.27%, #374e7c 0%, #3a75b1 14.82%, #5d5baf 52.6%, #1c1c47 97.92%);  
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh; /* Adjusted to leave space for the navbar */
+}
+
+.content-box {
+  background-color: #ffffff;
+  background: whitesmoke;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(20, 7, 117, 0.1);
+  padding: 40px;
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  overflow: auto;
 }

@@ -1,20 +1,19 @@
 import './App.css';
 import React, { useEffect, useState } from "react";
 import ArraysPage from './pages/arraysPage';
+import LandingPage from './pages/LandingPage';
+
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import '/Users/sukritipunj/Downloads/comp/AlgoVisualiser/frontend/src/index.css';
+
 
 function App() {
   const [unsortedArray, setUnsortedArray] = useState([]);
   const [speed, setSpeed] = useState(900);
 
-  useEffect(() => {
-    generateRandomArray();
-  }, []);
+  
 
-  const generateRandomArray = () => {
-    const array = Array.from({ length: 20 }, () => Math.floor(Math.random() * 30) + 1);
-    setUnsortedArray(array);
-    renderBars(array);
-  };
+  
 
   const renderBars = (array) => {
     const barsContainer = document.getElementById('bars_container');
@@ -26,6 +25,24 @@ function App() {
       barsContainer.appendChild(bar);
     });
   };
+const RandomArrayGenerator = () => {
+  const generateRandomArray = () => {
+    const array = Array.from({ length: 20 }, () => Math.floor(Math.random() * 30) + 1);
+    return array;
+  };
+
+  const [unsortedArray, setUnsortedArray] = useState(generateRandomArray());
+
+  useEffect(() => {
+    setUnsortedArray(generateRandomArray());
+  }, []);
+
+  return unsortedArray;
+};
+  
+  
+
+  
 
   const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -226,15 +243,42 @@ const quickSort = async (array, low = 0, high = array.length - 1) => {
     };
 
     return (
-      <div className="App">
-        <ArraysPage
-          handleSort={handleSort}
-          generateRandomArray={generateRandomArray}
-          setSpeed={setSpeed}
-          speed={speed}
-        />
-        <div id="bars_container"></div>
-      </div>
+      
+      <Router>
+      
+        <Switch>
+          <Route exact path="/" component={LandingPage} />
+          
+          {/* Placeholder routes for Trees and Graphs */}
+          
+          <Route path="/arraysPage" component={ArraysPage}>
+            <ArraysPage
+              handleSort={handleSort}
+              generateRandomArray={RandomArrayGenerator}
+              setSpeed={setSpeed}
+              speed={speed}
+            />
+          </Route>
+          <Route path="./pages/trees">
+            <div className="content-wrapper">
+              <div className="content-box">
+                <h1>Trees</h1>
+                <p>Content for trees goes here.</p>
+              </div>
+            </div>
+          </Route>
+          <Route path="./pages/graphs">
+            <div className="content-wrapper">
+              <div className="content-box">
+                <h1>Graphs</h1>
+                <p>Content for graphs goes here.</p>
+              </div>
+            </div>
+          </Route>
+        </Switch>
+      
+    </Router>
+
     );
   }
 
