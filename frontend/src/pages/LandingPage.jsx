@@ -1,6 +1,6 @@
 import React from "react";
 // import '/index.css'
-
+import './ds.css';
 import { Link } from "react-router-dom";
 
 
@@ -8,11 +8,11 @@ const LandingPage = () => {
     return (
       <div>
         <div className="background"></div>
-      <div className="navbar">
-        <Link to="./arraysPage">Arrays</Link>
-        <Link to="./treesPage">Trees</Link>
-        <Link to="./graphs">Graphs</Link>
-        <Link to="/LandingPage">HOME</Link>
+        <div className="navbar1">
+        <Link to="/">HOME</Link>
+        <Link to="/arrays">Arrays</Link>
+        <Link to="/trees">Trees</Link>
+        <Link to="/graphs">Graphs</Link>
         <Link to="/backtracking">Backtracking</Link>
       </div>
       <div className="content-wrapper">
