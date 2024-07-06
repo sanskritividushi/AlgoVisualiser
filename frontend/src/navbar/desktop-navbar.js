@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
  // SCSS
 import './navbar.css';
 // Assets
-import LogoImg from '/Users/sukritipunj/Downloads/comp/AlgoVisualiser/frontend/src/assets/navbar/logo.svg';
+import LogoImg from '/Users/sanskritividushi/Downloads/SortingVisualiser-main/frontend/src/assets/navbar/logo.svg';
 
 
 const desktopNav = (props) => {
