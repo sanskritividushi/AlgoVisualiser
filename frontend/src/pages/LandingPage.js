@@ -7,9 +7,9 @@ const LandingPage = () => {
       <div>
       <div className="background"></div>
       <div className="navbar">
-        <Link to="./arrays">Arrays</Link>
-        <Link to="./treesPage">Trees</Link>
-        <Link to="./graphs">Graphs</Link>
+        <Link to="/arrays">Arrays</Link>
+        <Link to="/trees">Trees</Link>
+        <Link to="/graphs">Graphs</Link>
         <Link to="/">HOME</Link>
       </div>
       <div className="content-wrapper">

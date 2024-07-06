@@ -49,7 +49,7 @@ const ArraysPage = ({ handleSort, generateRandomArray, setSpeed, speed, selected
           <div className="code_snippet">
             <h3>{selectedAlgorithm.charAt(0).toUpperCase() + selectedAlgorithm.slice(1)} Sort:</h3>
             <pre className="code">{getCodeSnippet(selectedAlgorithm)}</pre>
-          </div>
+        </div>
         )}
       </div>
       </div>
