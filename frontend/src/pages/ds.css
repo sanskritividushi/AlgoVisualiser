@@ -429,3 +429,30 @@ body {
     justify-content: center;
     align-items: center;
   }
+
+  .sudoku-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .sudoku-board {
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+  
+  .sudoku-board td {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+  }
+  
+  .sudoku-board td:nth-child(3n) {
+    border-right: 2px solid #000;
+  }
+  
+  .sudoku-board tr:nth-child(3n) td {
+    border-bottom: 2px solid #000;
+  }
