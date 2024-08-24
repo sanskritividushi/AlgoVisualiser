@@ -2,17 +2,30 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ds.css';
 
-const initialBoard = [
-  [5, 3, 0, 0, 7, 0, 0, 0, 0],
-  [6, 0, 0, 1, 9, 5, 0, 0, 0],
-  [0, 9, 8, 0, 0, 0, 0, 6, 0],
-  [8, 0, 0, 0, 6, 0, 0, 0, 3],
-  [4, 0, 0, 8, 0, 3, 0, 0, 1],
-  [7, 0, 0, 0, 2, 0, 0, 0, 6],
-  [0, 6, 0, 0, 0, 0, 2, 8, 0],
-  [0, 0, 0, 4, 1, 9, 0, 0, 5],
-  [0, 0, 0, 0, 8, 0, 0, 7, 9]
-];
+const generatenew = () => {
+  window.location.reload();
+  generateRandomBoard();
+}
+const generateRandomBoard = () => {
+  const board = Array(9).fill(0).map(() => Array(9).fill(0));
+  fillRandomCells(board, 20); // Fills 20 cells randomly. Adjust this number as needed.
+  return board;
+};
+
+const fillRandomCells = (board, numberOfCells) => {
+  let filled = 0;
+  while (filled < numberOfCells) {
+    const row = Math.floor(Math.random() * 9);
+    const col = Math.floor(Math.random() * 9);
+    if (board[row][col] === 0) {
+      const num = Math.floor(Math.random() * 9) + 1;
+      if (isSafe(board, row, col, num)) {
+        board[row][col] = num;
+        filled++;
+      }
+    }
+  }
+};
 
 const isSafe = (board, row, col, num) => {
   for (let x = 0; x < 9; x++) {
@@ -45,7 +58,7 @@ const solveSudoku = (board) => {
 };
 
 const BacktrackingPage = () => {
-  const [board, setBoard] = useState(initialBoard);
+  const [board, setBoard] = useState(generateRandomBoard());
   const [showCode, setShowCode] = useState(false);
 
   const handleSolve = () => {
@@ -131,6 +144,7 @@ const BacktrackingPage = () => {
               ))}
             </tbody>
           </table>
+          <button id="bubble_button" onClick={generatenew}>Generate New Board</button>
           <button id="bubble_button" onClick={handleSolve}>Solve Sudoku</button>
         </div>
         {showCode && (

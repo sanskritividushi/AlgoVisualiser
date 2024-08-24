@@ -1,8 +1,6 @@
 import React from "react";
-// import '/index.css'
 import './ds.css';
 import { Link } from "react-router-dom";
-
 const LandingPage = () => {
     return (
       <div>

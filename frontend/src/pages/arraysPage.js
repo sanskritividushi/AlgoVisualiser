@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import { Link } from "react-router-dom";
 import './ds.css';
 
@@ -13,12 +13,6 @@ const ArraysPage = () => {
     setUnsortedArray(array);
     renderBars(array);
   };
-
-  useEffect(() => {
-    generateRandomArray();
-    // eslint-disable-next-line
-  }, []);
-
 
   const renderBars = (array) => {
     const barsContainer = document.getElementById('bars_container');
